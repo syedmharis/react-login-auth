@@ -3,10 +3,17 @@ const cors = require('cors')
 const app = express();
 
 app.use(cors());
-
+var mytoken = Math.random()
 app.use('/login', (req, res) => {
   res.send({
-    token: 'test123'
+    token: mytoken
+  });
+});
+
+app.get('/demo', (req, res) => {
+  res.send({
+    username:'haris',
+    password:'123456',
   });
 });
 
